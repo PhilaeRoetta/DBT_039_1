@@ -1,0 +1,5 @@
+models:
+  - name: dim_customer
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('dim_customer_testing_expected')
