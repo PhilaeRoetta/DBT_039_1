@@ -5,6 +5,6 @@ with orders as (
         order_date,
         status
     FROM
-        DBT.DBT_039_1.ORDERS
+        {{source("DBT_039_1_SRC","ORD")}}
 )
 SELECT * FROM orders

@@ -8,7 +8,7 @@ with payments as (
         amount as order_amount,
         created
     FROM
-        DBT.DBT_039_1.PAYMENTS
+        {{source("DBT_039_1_SRC","PAY")}}
 
 )
 
