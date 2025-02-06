@@ -4,6 +4,6 @@ with customers as (
         firstname as customer_firstname,
         lastname as customer_lastname
     FROM
-        DBT.DBT_039_1.CUSTOMERS
+        {{source("DBT_039_1_SRC","CUST")}}
 )
 SELECT * FROM customers

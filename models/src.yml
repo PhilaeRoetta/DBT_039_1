@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: DBT_039_1_SRC
+    database: DBT
+    schema: DBT_039_1
+    tables:
+      - name: CUST
+        identifier: CUSTOMERS
+      - name: ORD
+        identifier: ORDERS
+        loaded_at_field: _etl_loaded_at_
+        freshness: 
+          error_after:
+            count: 2
+            period: hour
+          warn_after:
+            count: 1
+            period: hour
+        
+      - name: PAY
+        identifier: PAYMENTS
