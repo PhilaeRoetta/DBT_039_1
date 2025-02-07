@@ -44,6 +44,7 @@ models:
     # Applies to all files under models/example/
     marts:
       +materialized: view
+      +required_tests: {"unique.*|not_null": 1}
     staging:
       +materialized: table
 
